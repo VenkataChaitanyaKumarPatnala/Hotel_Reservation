@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hotel Reservation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %}active{% endif %}">Home</a> |
+  
+    <a href="{{ url_for('rooms') }}" class="{% if request.endpoint == 'rooms' %}active{% endif %}">Rooms</a> |
+  
+    <a href="{{ url_for('book') }}" class="{% if request.endpoint == 'book' %}active{% endif %}">Book</a> |
+  
+    <a href="{{ url_for('bookings') }}" class="{% if request.endpoint == 'bookings' %}active{% endif %}">Bookings</a>
+   </nav>
+   <div class="top-contact">
+    📧 support@hotel.com
+    </div>
+  <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="flash {{ category }}">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Bookings</h2>
+<table>
+  <tr><th>ID</th><th>Customer</th><th>Room</th><th>Check-in</th><th>Check-out</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+  {% for b in bookings %}
+  <tr>
+    <td>{{ b.booking_id }}</td>
+    <td>{{ b.customer.name }}</td>
+    <td>{{ b.room.room_number }}</td>
+    <td>{{ b.check_in }}</td>
+    <td>{{ b.check_out }}</td>
+    <td>{{ b.total_amount }}</td>
+    <td>{{ b.booking_status }}</td>
+    <td><a href="{{ url_for('payment', booking_id=b.booking_id) }}">Payment</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Record Payment for Booking {{ booking.booking_id }}</h2>
+<form method="post">
+  <label>Amount</label><input name="amount" value="{{ booking.total_amount }}" required>
+  <label>Mode</label><input name="mode" required>
+  <button type="submit">Pay</button>
+</form>
+{% endblock %}

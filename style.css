@@ -1,0 +1,394 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #0f172a, #020617);
+  color: #f8fafc;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #38bdf8, #34d399);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #e5e7eb;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #cbd5f5;
+}
+
+p {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button,
+input[type="submit"],
+.hero-btn {
+  padding: 14px 30px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #020617;
+  background: linear-gradient(135deg, #38bdf8, #34d399);
+  box-shadow: 0 0 10px rgba(56,189,248,0.6),
+              0 0 20px rgba(52,211,153,0.4),
+              0 8px 25px rgba(0,0,0,0.6);
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ GLOW HOVER EFFECT */
+button:hover,
+input[type="submit"]:hover,
+.hero-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(56,189,248,0.9),
+              0 0 40px rgba(52,211,153,0.7),
+              0 15px 40px rgba(0,0,0,0.8);
+}
+
+/* ✨ CLICK EFFECT */
+button:active,
+input[type="submit"]:active,
+.hero-btn:active {
+  transform: scale(0.95);
+}
+
+/* ✨ SHINE ANIMATION */
+button::after,
+.hero-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  transition: 0.5s;
+}
+
+button:hover::after,
+.hero-btn:hover::after {
+  left: 100%;
+}
+
+/* =========================
+   FORMS
+========================= */
+form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 16px;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #cbd5f5;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #38bdf8;
+}
+
+/* =========================
+   TABLES (BOOKINGS PAGE)
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: center;
+}
+
+th {
+  background: rgba(56, 189, 248, 0.2);
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: rgba(255,255,255,0.03);
+}
+
+tr:hover {
+  background: rgba(52, 211, 153, 0.1);
+}
+
+/* =========================
+   CARDS (ROOMS PAGE)
+========================= */
+div {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   PAGE SECTIONS
+========================= */
+section {
+  margin-top: 35px;
+}
+
+/* =========================
+   PAYMENT PAGE
+========================= */
+input[type="number"],
+input[type="text"],
+input[type="date"] {
+  margin-bottom: 14px;
+}
+
+/* =========================
+   NAVBAR (AUTO APPLY IF EXISTS)
+========================= */
+nav {
+  background: rgba(255,255,255,0.05);
+  padding: 14px 30px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+nav a {
+  color: #e5e7eb;
+  margin-left: 16px;
+}
+
+nav a:hover {
+  color: #34d399;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  margin-top: 60px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  body {
+    padding: 24px 12px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  form {
+    padding: 18px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
+/* =========================
+   HOME PAGE STYLING
+========================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 12px;
+  background: linear-gradient(to right, #38bdf8, #34d399);
+  color: #020617;
+  font-weight: 800;
+}
+
+.hero-image img {
+  width: 380px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ABOUT */
+.about {
+  margin-top: 60px;
+  max-width: 800px;
+}
+
+/* FEATURES */
+.features {
+  margin-top: 60px;
+}
+
+.feature-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.feature-box {
+  background: rgba(255,255,255,0.05);
+  padding: 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* GALLERY */
+.gallery {
+  margin-top: 60px;
+}
+
+.gallery-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+/* 🔥 NAVBAR HIGHLIGHT (ACTIVE PAGE) */
+nav a {
+  padding: 10px 22px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: rgba(56,189,248,0.15);
+  box-shadow: 0 0 10px rgba(56,189,248,0.6);
+}
+
+/* ✅ ACTIVE PAGE HIGHLIGHT */
+nav a.active {
+  background: linear-gradient(135deg, #38bdf8, #34d399);
+  color: #020617 !important;
+  box-shadow: 0 0 20px rgba(56,189,248,0.9),
+              0 0 40px rgba(52,211,153,0.6);
+  font-weight: 900;
+}
+.top-contact {
+  text-align: right;
+  padding: 8px 25px;
+  color: #a5f3fc;
+  font-size: 14px;
+  background: rgba(2, 6, 23, 0.7);
+}
+

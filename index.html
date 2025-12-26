@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <!-- ✅ HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Our Luxury Hotel</h1>
+      <p>
+        Experience comfort, elegance, and world-class hospitality.
+        Book your perfect stay with just a few clicks.
+      </p>
+      <a href="/rooms" class="hero-btn">Explore Rooms</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="{{ url_for('static', filename='hotel1.jpg') }}" alt="Hotel Image">
+    </div>
+  </section>
+
+  <!-- ✅ ABOUT SECTION -->
+  <section class="about">
+    <h2>About Our Hotel</h2>
+    <p>
+      Our hotel offers premium rooms, modern facilities, and a peaceful
+      environment for families, couples, and business travelers.
+      We focus on quality service, safety, and customer satisfaction.
+    </p>
+  </section>
+
+  <!-- ✅ FEATURES / SERVICES -->
+  <section class="features">
+    <h2>Why Choose Us?</h2>
+
+    <div class="feature-grid">
+      <div class="feature-box">✔ Free Wi-Fi</div>
+      <div class="feature-box">✔ 24/7 Room Service</div>
+      <div class="feature-box">✔ Luxury Rooms</div>
+      <div class="feature-box">✔ Secure Payments</div>
+      <div class="feature-box">✔ Family Friendly</div>
+      <div class="feature-box">✔ Best Price Guarantee</div>
+    </div>
+  </section>
+
+  <!-- ✅ IMAGE GALLERY -->
+  <section class="gallery">
+    <h2>Our Rooms & Facilities</h2>
+
+    <div class="gallery-grid">
+      <img src="{{ url_for('static', filename='room1.jpg') }}">
+      <img src="{{ url_for('static', filename='room2.jpg') }}">
+      <img src="{{ url_for('static', filename='room3.jpg') }}">
+      <img src="{{ url_for('static', filename='hotel1.jpg') }}">
+    </div>
+  </section>
+
+</div>
+
+{% endblock %}

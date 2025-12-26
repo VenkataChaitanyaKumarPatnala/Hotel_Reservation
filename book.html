@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create Booking</h2>
+<form method="post">
+  <label>Name</label><input name="name" required>
+  <label>Email</label><input name="email" required>
+  <label>Phone</label><input name="phone" required>
+  <label>Room</label>
+  <select name="room_id">
+    {% for r in rooms %}
+    <option value="{{ r.room_id }}">{{ r.room_number }} - {{ r.room_type }} ({{ r.price }})</option>
+    {% endfor %}
+  </select>
+  <label>Check-in</label><input type="date" name="check_in" required>
+  <label>Check-out</label><input type="date" name="check_out" required>
+  <button type="submit">Book</button>
+</form>
+{% endblock %}
